@@ -15,7 +15,7 @@ headers = {
 # 全台25個城市
 with open('data.json', 'r') as f:
     cities = json.load(f)
-
+f.close()
 
 for i in range(0,25):
     areas = []
@@ -38,4 +38,10 @@ for i in range(0,25):
             storeDetails.append({poiname , address})
 
 
+
 print(storeDetails)
+
+#打開result.json，複寫上去
+fo = open("result.json", "w") 
+fo.write( str(storeDetails))
+fo.close()
